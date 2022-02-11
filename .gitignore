@@ -1,0 +1,7 @@
+.env
+/venv
+/__pycache__
+/.idea
+datacenter/__pycache__/
+datacenter/migrations/__pycache__/
+project/__pycache__/
