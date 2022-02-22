@@ -7,7 +7,6 @@ from .models import is_visit_long
 
 
 def passcard_info_view(request, passcode):
-    passcard = Passcard.objects.all()[0]
     this_passcard_visits = []
 
     current_passcard = Passcard.objects.get(passcode=passcode)
@@ -25,7 +24,8 @@ def passcard_info_view(request, passcode):
         })
 
     context = {
-        'passcard': passcard,
+        'passcard': current_passcard,
         'this_passcard_visits': this_passcard_visits
     }
+
     return render(request, 'passcard_info.html', context)
