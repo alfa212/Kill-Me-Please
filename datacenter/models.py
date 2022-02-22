@@ -45,4 +45,4 @@ def get_duration(visit):
 
 
 def is_visit_long(visit, minutes=60):
-    return visit.seconds / 60 > minutes
+    return visit.total_seconds() / 60 > minutes
