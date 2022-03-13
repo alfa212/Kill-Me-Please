@@ -7,7 +7,6 @@ import dj_database_url
 env = Env()
 env.read_env()
 
-
 DB_URL = env('DB_URL')
 
 DATABASES = {'default': dj_database_url.config(default=DB_URL)}
@@ -20,7 +19,7 @@ DEBUG = env.bool('DEBUG')
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
