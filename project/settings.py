@@ -13,7 +13,7 @@ DATABASES = {'default': dj_database_url.config(default=DB_URL)}
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = 'REPLACE_ME'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG').lower() == 'true'
 
